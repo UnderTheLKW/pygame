@@ -48,7 +48,7 @@ while spielaktiv:
      # Spielfeld
 
     game_field()
-
+    '''
     if board_state[0]:
         pygame.draw.circle(screen, red, [200, 200], 100, 8)
     if board_state[1]:
@@ -66,7 +66,7 @@ while spielaktiv:
     if board_state[7]:
         pygame.draw.circle(screen, red, [516, 835], 100, 8)
     if board_state[8]:
-        pygame.draw.circle(screen, red, [835, 835], 100, 8)
+        pygame.draw.circle(screen, red, [835, 835], 100, 8)'''
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -78,30 +78,39 @@ while spielaktiv:
             if event.pos[0] < 341 and event.pos[1] <= 341:
                 print("1")
                 board_state[0] = True
+                pygame.draw.circle(screen, red, [200, 200], 100, 8)
             if event.pos[0] < 682 and event.pos[0] > 341 and event.pos[1] < 341 and event.pos[1] > 0:
                 print("2")
                 board_state[1] = True
+                pygame.draw.circle(screen, red, [516, 200], 100, 8)
             if event.pos[0] < 1024 and event.pos[0] > 682 and event.pos[1] < 341 and event.pos[1] > 0:
                 print("3")
                 board_state[2] = True
+                pygame.draw.circle(screen, red, [835, 200], 100, 8)
             if event.pos[0] < 341 and event.pos[0] > 0 and event.pos[1] < 682 and event.pos[1] > 341:
                 print("4")
                 board_state[3] = True
+                pygame.draw.circle(screen, red, [200, 516], 100, 8)
             if event.pos[0] < 682 and event.pos[0] > 341 and event.pos[1] < 682 and event.pos[1] > 341:
                 print("5")
                 board_state[4] = True
+                pygame.draw.circle(screen, red, [516, 516], 100, 8)
             if event.pos[0] < 1024 and event.pos[0] > 682 and event.pos[1] < 682 and event.pos[1] > 341:
                 print("6")
                 board_state[5] = True
+                pygame.draw.circle(screen, red, [835, 516], 100, 8)
             if event.pos[0] < 341 and event.pos[0] > 0 and event.pos[1] < 1024 and event.pos[1] > 682:
                 print("7")
                 board_state[6] = True
+                pygame.draw.circle(screen, red, [200, 835], 100, 8)
             if event.pos[0] < 682 and event.pos[0] > 341 and event.pos[1] < 1024 and event.pos[1] > 682:
                 print("8")
                 board_state[7] = True
+                pygame.draw.circle(screen, red, [516, 835], 100, 8)
             if event.pos[0] < 1024 and event.pos[0] > 682 and event.pos[1] < 1024 and event.pos[1] > 682:
                 print("9")
                 board_state[8] = True
+                pygame.draw.circle(screen, red, [835, 835], 100, 8)
             #wagerecht
             if board_state[0] and board_state[1] and board_state[2]:
                 pygame.draw.line(screen, black, [75, 200], [950, 200], 10)
@@ -128,8 +137,8 @@ while spielaktiv:
                 pygame.draw.line(screen, black, [75, 75], [950, 950], 10)
             if board_state[2] and board_state[4] and board_state[6]:
                 pygame.draw.line(screen, black, [950, 75], [75, 950], 10)
-        if event.type == pygame.MOUSEBUTTONUP and event.button == right:
-            screen.fill("blue")
+        #if event.type == pygame.MOUSEBUTTONUP and event.button == right:
+            #screen.fill("blue")
 
     pygame.display.flip()
 #spiel Beenden
